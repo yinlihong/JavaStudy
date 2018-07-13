@@ -8,7 +8,8 @@ import java.util.concurrent.ForkJoinPool;
  */
 public class Practise {
     public static void main(String[] args) {
-        test4();
+
+        test5();
     }
 
     //九九乘法表
@@ -68,6 +69,7 @@ public class Practise {
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
         int b = scanner.nextInt();
+        int c = b;
         int r;
         do{
             r = a%b;
@@ -78,5 +80,17 @@ public class Practise {
             }
         }while (r!=0);
         System.out.println("最大公约数为:"+b);
+        System.out.println("最小公倍数为:"+(a*c/b));
+    }
+    //水仙花数
+    public static void test5 (){
+        for(int i=100;i<1000;i++){
+            int a1 = i/100;
+            int a2 = i/10%10;
+            int a3 = i%10;
+            if(Math.pow(a1,3)+Math.pow(a2,3)+Math.pow(a3,3)==i){
+                System.out.println(i);
+            }
+        }
     }
 }

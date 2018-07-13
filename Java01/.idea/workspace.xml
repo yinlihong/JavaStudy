@@ -61,8 +61,8 @@
       <file leaf-file-name="Practise.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Practise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+            <state relative-caret-position="380">
+              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#test1#0;class#Practise#0" expanded="false" />
@@ -653,12 +653,12 @@
       <updated>1531448798398</updated>
       <workItem from="1531448810091" duration="4135000" />
       <workItem from="1531460014947" duration="16398000" />
-      <workItem from="1531483519367" duration="2429000" />
+      <workItem from="1531483519367" duration="2759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22962000" />
+    <option name="totallyTimeSpent" value="23292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -834,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Practise.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+        <state relative-caret-position="380">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#test1#0;class#Practise#0" expanded="false" />

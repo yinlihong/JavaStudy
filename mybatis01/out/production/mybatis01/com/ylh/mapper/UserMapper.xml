@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ylh.mapper.UserMapper">
+<!--模糊查询用户-->
+    <select id="selectLikeName" parameterType="String" resultType="com.ylh.po.User">
+        SELECT * FROM user WHERE username LIKE '%${value}%';
+    </select>
+<!--练习：同时根据姓名关键字和性别来查询满足条件的学生-->
+    <!--parameterType输入类型要写com.ylh.po.User而不是直接写User-->
+    <select id="selectByNameAndSex" parameterType="com.ylh.po.User" resultType="com.ylh.po.User">
+        SELECT * FROM user WHERE username LIKE '%${username}%' AND sex=#{sex};
+    </select>
+<!--动态sql-->
+<select id="selectByIdAndName" parameterType="com.ylh.po.User" resultType="com.ylh.po.User">
+    SELECT * FROM user
+    <where>
+        <if test="username != null and username != ''">
+            AND username LIKE '%${username}%'
+        </if>
+        <if test="id != null and id != ''">
+            AND id = #{id}
+        </if>
+    </where>
+</select>
+</mapper>
+

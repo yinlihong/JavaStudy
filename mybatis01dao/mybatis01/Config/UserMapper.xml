@@ -1,0 +1,43 @@
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--通过namespace来找到指定的sql操作文件-->
+<mapper namespace="user">
+<!--查询user表中所有的数据-->
+<select id="selectAllUser" resultType="com.ylh.po.User" >
+    select * from user ;
+</select>
+<select id="selectExactId" resultType="com.ylh.po.User" parameterType="integer">
+    SELECT * FROM user WHERE id=#{id};
+</select>
+<select id="selectExactUserName" resultType="com.ylh.po.User" parameterType="String">
+    SELECT * FROM user WHERE username=#{username};
+</select>
+<!--模糊查询-->
+    <select id="findUserLikeName" resultType="com.ylh.po.User" parameterType="String">
+       SELECT * FROM user WHERE username LIKE '%${value}%';
+    </select>
+    <!--插入一条数据-->
+    <insert id="insertUser" parameterType="com.ylh.po.User">
+      <selectKey keyProperty="id" resultType="int" order="AFTER">
+         SELECT LAST_INSERT_ID()
+      </selectKey>
+        INSERT INTO user (username, birthday, sex, address) values (#{username},#{birthday},#{sex},#{address});
+    </insert>
+    <!--更新update-->
+    <update id="updateUser" parameterType="com.ylh.po.User">
+        UPDATE user SET username=#{username},sex=#{sex},birthday=#{birthday},address=#{address} WHERE id=#{id}
+    </update>
+    <!--删除-->
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM user WHERE id=#{id};
+    </delete>
+    <!--批量删除-->
+    <delete id="deleteByIdList" parameterType="List">
+        DELETE FROM user WHERE id IN
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
+
